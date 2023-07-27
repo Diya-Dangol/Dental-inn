@@ -2,6 +2,6 @@
     "patients": [
         {"id":1, "name": "Diya Dangol", "contact_no": 9851545454, "gender": "Female", "age": 25, "address": "Swoyambhu"},
         {"id":2, "name": "Piya Rati", "contact_no": 9851544526, "gender": "Female", "age": 20, "address": "Kathmandu"},
-        {"id":2, "name": "Dipini Dipini", "contact_no": 9851541325, "gender": "Male", "age": 26, "address": "Kathmandu"}
+        {"id":3, "name": "Dipini Dipini", "contact_no": 9851541325, "gender": "Male", "age": 26, "address": "Kathmandu"}
     ]
 }

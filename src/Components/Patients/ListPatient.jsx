@@ -1,4 +1,7 @@
 import {useState, useEffect} from 'react';
+import Table from 'react-bootstrap/Table';
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
 
 function ListPatient(){
     const [patient, setPatient]=useState([]); 
@@ -14,19 +17,42 @@ function ListPatient(){
 
     return(
         <>
-         {patient.map((item)=>{
-            console.log({item});
-            const {id, name, address, age, gender, contact_no}=item;
-            return(
-                <div key={id}>
-                    <h1>Name: {name}</h1>
-                    <h2>Address: {address}</h2>
-                    <h2>Age: {age}</h2>
-                    <h2>Gender: {gender}</h2>
-                    <h2>Contact no: {contact_no}</h2>
-                </div>
-            )
-         })}
+            <Alert variant="primary">
+                Patient list
+            </Alert>
+            <Table striped bordered hover responsive>
+                <thead>
+                    <tr>
+                    <th>S.N.</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Contact No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {patient.map((item, index)=>{
+                        console.log({item});
+                        const {id, name, address, age, gender, contact_no}=item;
+                        return(
+                            <tr key={id}> 
+                                <td>{index+1}</td>                                   
+                                <td>{name}</td>
+                                <td>{address}</td>
+                                <td>{age}</td>
+                                <td>{gender}</td>
+                                <td>{contact_no}</td>
+                                <td>
+                                    <Button className="m-1" variant="success">Edit</Button>
+                                <Button variant="danger">Delete</Button>
+                                </td>
+                            </tr>
+                        )
+                    })}
+                </tbody>
+            </Table>
+         
         </>
     )
 }
