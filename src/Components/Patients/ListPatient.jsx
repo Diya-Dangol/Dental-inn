@@ -1,7 +1,9 @@
 import {useState, useEffect} from 'react';
 import Table from 'react-bootstrap/Table';
-import Alert from 'react-bootstrap/Alert';
+// import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
+import AddPatient from './AddPatient';
+import {Link} from 'react-router-dom'; 
 
 function ListPatient(){
     const [patient, setPatient]=useState([]); 
@@ -13,13 +15,18 @@ function ListPatient(){
         fetch(url)
         .then(response => response.json())
         .then(data=> setPatient(data))
-    },[])
+    },[]);
 
     return(
         <>
-            <Alert variant="primary">
+            {/* <Alert variant="primary">
                 Patient list
-            </Alert>
+            </Alert> */}
+            <div className='text-start m-4'>
+                <Link to="/addpatient">
+                    <Button variant="secondary">Add Patient</Button>
+                </Link>
+            </div>
             <Table striped bordered hover responsive>
                 <thead>
                     <tr>
