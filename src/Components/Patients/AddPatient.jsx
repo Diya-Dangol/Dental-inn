@@ -15,7 +15,6 @@ function AddPatient() {
     address:'',
     contact_no:''
   });
-  // const [checked, setChecked] =useState(false);
 
   const navigate =useNavigate();
 
@@ -72,7 +71,7 @@ function AddPatient() {
               type="number"
               placeholder="Age"
               name="age"
-              value={patient.value}
+              value={patient.age}
               onChange={handleChange}
             />
           </Form.Group>

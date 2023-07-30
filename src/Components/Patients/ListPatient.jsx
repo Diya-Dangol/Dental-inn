@@ -16,10 +16,6 @@ function ListPatient(){
         .then(data=> setPatient(data))
     },[]);
 
-    const handleEdit=(id)=>{
-        setEdit(true);
-        console.log("Editing");
-    }
 
     return(
         <>
@@ -54,7 +50,7 @@ function ListPatient(){
                                 <td>{gender}</td>
                                 <td>{contact_no}</td>
                                 <td>
-                                    <Button className="m-1" variant="success" onClick={()=>handleEdit(id)}>Edit</Button>
+                                    <Button className="m-1" variant="success">Edit</Button>
                                 <Button variant="danger">Delete</Button>
                                 </td>
                             </tr>
