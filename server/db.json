@@ -1,7 +1,60 @@
 {
-    "patients": [
-        {"id":1, "name": "Diya Dangol", "contact_no": 9851545454, "gender": "Female", "age": 25, "address": "Swoyambhu"},
-        {"id":2, "name": "Piya Rati", "contact_no": 9851544526, "gender": "Female", "age": 20, "address": "Kathmandu"},
-        {"id":3, "name": "Dipini Dipini", "contact_no": 9851541325, "gender": "Male", "age": 26, "address": "Kathmandu"}
-    ]
+  "patients": [
+    {
+      "id": 1,
+      "name": "Diya Dangol",
+      "age": 25,
+      "gender": "Female",
+      "address": "Swoyambhu",
+      "contact_no": 9851545454
+    },
+    {
+      "id": 2,
+      "name": "Piya Rati",
+      "age": 20,
+      "gender": "Female",
+      "address": "Kathmandu",
+      "contact_no": 9851544526
+    },
+    {
+      "id": 3,
+      "name": "Dipini Dipini",
+      "age": 26,
+      "gender": "Male",
+      "address": "Kathmandu",
+      "contact_no": 9851541325
+    },
+    {
+      "id": 4,
+      "name": "Diya Dangol",
+      "age": "12",
+      "gender": "Male",
+      "address": "Kathmandu",
+      "contact_no": "136546"
+    },
+    {
+      "id": 5,
+      "name": "Hawai Hawai",
+      "age": "45",
+      "gender": "Male",
+      "address": "Kathmandu",
+      "contact_no": "5198761618"
+    },
+    {
+      "id": 6,
+      "name": "dsafadsf",
+      "age": "12",
+      "gender": "Female",
+      "address": "Kathamndu",
+      "contact_no": "1515"
+    },
+    {
+      "id": 7,
+      "name": "Hawai Hawai",
+      "age": "50",
+      "gender": "Other",
+      "address": "sdfgfsdg",
+      "contact_no": "9853156789"
+    }
+  ]
 }

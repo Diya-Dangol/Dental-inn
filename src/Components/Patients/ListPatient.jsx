@@ -2,20 +2,24 @@ import {useState, useEffect} from 'react';
 import Table from 'react-bootstrap/Table';
 // import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
-import AddPatient from './AddPatient';
 import {Link} from 'react-router-dom'; 
 
 function ListPatient(){
     const [patient, setPatient]=useState([]); 
+    const [edit, setEdit]= useState(false);
 
     const url=`http://localhost:3500/patients`;
 
     useEffect(()=>{  
-        console.log("hello from use Effect")      
         fetch(url)
         .then(response => response.json())
         .then(data=> setPatient(data))
     },[]);
+
+    const handleEdit=(id)=>{
+        setEdit(true);
+        console.log("Editing");
+    }
 
     return(
         <>
@@ -40,7 +44,6 @@ function ListPatient(){
                 </thead>
                 <tbody>
                     {patient.map((item, index)=>{
-                        console.log({item});
                         const {id, name, address, age, gender, contact_no}=item;
                         return(
                             <tr key={id}> 
@@ -51,7 +54,7 @@ function ListPatient(){
                                 <td>{gender}</td>
                                 <td>{contact_no}</td>
                                 <td>
-                                    <Button className="m-1" variant="success">Edit</Button>
+                                    <Button className="m-1" variant="success" onClick={()=>handleEdit(id)}>Edit</Button>
                                 <Button variant="danger">Delete</Button>
                                 </td>
                             </tr>
