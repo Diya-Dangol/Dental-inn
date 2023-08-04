@@ -1,11 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState , useEffect} from "react";
+import {useNavigate, useParams} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import {toast} from 'react-toastify';
 
 function EditPatient() {
     const [patient, setPatient] = useState({
+        id: "",
         name: "",
         age: "",
         gender: '',
@@ -13,15 +16,47 @@ function EditPatient() {
         contact_no:''
     });
 
-    const handleChange=()=>{
+    const param=useParams();
+    const navigate = useNavigate();
 
+    const notify =()=> toast.success("Patient Edited Successfully", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+
+    const handleChange=(e)=>{
+        const name=e.target.name;
+        const value=e.target.value;
+        setPatient({...patient, [name]:value})
     }
 
     useEffect(()=>{
-        fetch('http://localhost:3500/patients/1')
+        fetch(`http://localhost:3500/patients/${param.id}`)
         .then(res => res.json())
         .then(data=> setPatient(data))
     },[])
+
+    const handleEdit=(e)=>{
+        e.preventDefault();
+
+        const requestOptions={
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(patient)
+        }
+
+        fetch(`http://localhost:3500/patients/${param.id}`, requestOptions)
+        .then(res=>res.json())
+        .then(notify)
+        .then(navigate('/patient'))
+    }
+
   return (
     <div>
         <Form noValidate>
@@ -67,7 +102,7 @@ function EditPatient() {
                 <Form.Control type="text" placeholder="Contact Number" name="contact_no" value={patient.contact_no} onChange={handleChange} />
             </Form.Group>
             </Row>
-            <Button type="submit">Submit form</Button>
+            <Button type="submit" onClick={handleEdit}>Upadate</Button>
         </Form>
     </div>
   )

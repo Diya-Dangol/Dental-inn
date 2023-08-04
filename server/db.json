@@ -2,11 +2,11 @@
   "patients": [
     {
       "id": 1,
-      "name": "Diya Dangol",
-      "age": 25,
+      "name": "Piya Rati",
+      "age": 20,
       "gender": "Female",
-      "address": "Swoyambhu",
-      "contact_no": 9851545454
+      "address": "Kathmandu",
+      "contact_no": 9851544526
     },
     {
       "id": 2,
@@ -34,15 +34,15 @@
     },
     {
       "id": 5,
-      "name": "Hawai Hawai",
-      "age": "45",
-      "gender": "Male",
+      "name": "Hawai Hawai wai wai",
+      "age": "80",
+      "gender": "Female",
       "address": "Kathmandu",
-      "contact_no": "5198761618"
+      "contact_no": "234567890"
     },
     {
       "id": 6,
-      "name": "dsafadsf",
+      "name": "jonh john",
       "age": "12",
       "gender": "Female",
       "address": "Kathamndu",

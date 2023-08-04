@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 function ListPatient(){
     const [patient, setPatient]=useState([]); 
-    const [edit, setEdit]= useState(false);
+    // const [edit, setEdit]= useState(false);
 
     const url=`http://localhost:3500/patients`;
 
@@ -50,7 +50,11 @@ function ListPatient(){
                                 <td>{gender}</td>
                                 <td>{contact_no}</td>
                                 <td>
-                                    <Button className="m-1" variant="success">Edit</Button>
+                                    <Link to={`/EditPatient/${id}`} >
+                                        <Button className="m-1" variant="success">
+                                            Edit
+                                        </Button>
+                                    </Link>
                                 <Button variant="danger">Delete</Button>
                                 </td>
                             </tr>
