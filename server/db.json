@@ -1,14 +1,6 @@
 {
   "patients": [
     {
-      "id": 1,
-      "name": "Piya Rati",
-      "age": 20,
-      "gender": "Female",
-      "address": "Kathmandu",
-      "contact_no": 9851544526
-    },
-    {
       "id": 2,
       "name": "Piya Rati",
       "age": 20,
@@ -47,14 +39,6 @@
       "gender": "Female",
       "address": "Kathamndu",
       "contact_no": "1515"
-    },
-    {
-      "id": 7,
-      "name": "Hawai Hawai",
-      "age": "50",
-      "gender": "Other",
-      "address": "sdfgfsdg",
-      "contact_no": "9853156789"
     }
   ]
 }

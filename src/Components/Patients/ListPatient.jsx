@@ -1,12 +1,18 @@
 import {useState, useEffect} from 'react';
 import Table from 'react-bootstrap/Table';
-// import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import {Link} from 'react-router-dom'; 
+import {toast} from'react-toastify';
 
 function ListPatient(){
     const [patient, setPatient]=useState([]); 
-    // const [edit, setEdit]= useState(false);
+    const [show, setShow] = useState(false);
+
+    const [deleteid, setDeleteid] = useState();
+
+    const handleClose=()=>{setShow(false)};
+    const handleShow=()=> {setShow(true)};
 
     const url=`http://localhost:3500/patients`;
 
@@ -14,7 +20,32 @@ function ListPatient(){
         fetch(url)
         .then(response => response.json())
         .then(data=> setPatient(data))
-    },[]);
+    },[deleteid]);
+
+    const notify =()=> toast.success("Patient Deleted Successfully", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
+        
+    const handleDelete=()=>{
+        
+        const requestOptions={
+            method : "DELETE"
+        };
+
+        fetch(`http://localhost:3500/patients/${deleteid}`, requestOptions)
+        .then(res=> res.json)
+        .then(console.log(deleteid))
+        .then(handleClose) 
+        .then(notify)
+        .then(setDeleteid())
+    }
 
 
     return(
@@ -27,6 +58,19 @@ function ListPatient(){
                     <Button variant="secondary">Add Patient</Button>
                 </Link>
             </div>
+
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Delete</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Do you really want to delete patient?</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="danger" onClick={handleDelete}>
+                        Yes
+                    </Button>
+                    <Button variant="secondary" onClick={handleClose}>No</Button>
+                </Modal.Footer>
+            </Modal>
             <Table striped bordered hover responsive>
                 <thead>
                     <tr>
@@ -55,7 +99,8 @@ function ListPatient(){
                                             Edit
                                         </Button>
                                     </Link>
-                                <Button variant="danger">Delete</Button>
+                                <Button variant="danger" onClick={()=>{handleShow(); setDeleteid(id)}}>
+                                    Delete</Button>
                                 </td>
                             </tr>
                         )
