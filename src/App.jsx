@@ -17,14 +17,20 @@ function App() {
       <TopNav />
       <Router>
         <Routes>
-          <Route path='/admin' element={<Login/>} />
-          <Route path='/patient' element={<ListPatient/>} />
+          <Route path='/' element={<Login/>} />
+          <Route path='patient' element={<ListPatient/>}>
+            <Route path="addpatient" element ={<AddPatient/>} />
+            <Route path ="editpatient/:id" element ={<EditPatient/>} />
+          </Route>
+          {/* <Route path='/patient' element={<ListPatient/>} />
           <Route path='/addpatient' element={<AddPatient/>} />
-          <Route path='/editpatient/:id' element={<EditPatient/>} />
+          <Route path='/editpatient/:id' element={<EditPatient/>} /> */}
         </Routes>
       </Router>
     </>
   )
 }
 
+
+// nested routing
 export default App

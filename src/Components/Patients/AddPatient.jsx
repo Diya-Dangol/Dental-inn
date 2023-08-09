@@ -30,9 +30,9 @@ function AddPatient() {
     });
 
   const handleChange=(e)=>{
-      const name=e.target.name;
-      const value= e.target.value;
-      setPatient({...patient, [name]:value})
+    const name=e.target.name;
+    const value= e.target.value;
+    setPatient({...patient, [name]:value})
   }
 
 
@@ -45,10 +45,10 @@ function AddPatient() {
       body: JSON.stringify(patient)
     };
 
-    fetch("http://localhost:3500/patients", requestOptions)
-      .then(res => res.json())
-      .then(notify)
-      .then(navigate('/patient'))
+    fetch(`${import.meta.env.VITE_BASE_URL}/patients`, requestOptions)
+    .then(res => res.json())
+    .then(notify)
+    .then(navigate('/patient'))
   };
 
   return (

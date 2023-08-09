@@ -8,7 +8,7 @@ function TopNav() {
     <>
       <Navbar bg="light" data-bs-theme="light">
         <Container>
-          <Navbar.Brand href="/">Dental Inn</Navbar.Brand>
+          <Navbar.Brand href="/patient">Dental Inn</Navbar.Brand>
           <Nav className="me-auto">
             {/* <Nav.Link href="#pricing">Pricing</Nav.Link> */}
           </Nav>

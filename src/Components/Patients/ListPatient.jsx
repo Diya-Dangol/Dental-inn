@@ -2,14 +2,14 @@ import {useState, useEffect} from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import {Link} from 'react-router-dom'; 
+import {Link, useNavigate} from 'react-router-dom'; 
 import {toast} from'react-toastify';
 
 function ListPatient(){
     const [patient, setPatient]=useState([]); 
     const [show, setShow] = useState(false);
-
     const [deleteid, setDeleteid] = useState();
+    const navigate= useNavigate();
 
     const handleClose=()=>{setShow(false)};
     const handleShow=()=> {setShow(true)};
@@ -54,9 +54,11 @@ function ListPatient(){
                 Patient list
             </Alert> */}
             <div className='text-start m-4'>
-                <Link to="/addpatient">
-                    <Button variant="secondary">Add Patient</Button>
-                </Link>
+                {/* <Link to="/patient/addpatient"> */}
+                    <Button variant="secondary"
+                    onClick={()=>{navigate('/patient/addpatient', {replace:true})}}
+                    >Add Patient</Button>
+                {/* </Link> */}
             </div>
 
             <Modal show={show} onHide={handleClose}>
@@ -107,6 +109,8 @@ function ListPatient(){
                     })}
                 </tbody>
             </Table>
+
+            {/* <Outlet /> */}
          
         </>
     )
