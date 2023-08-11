@@ -14,13 +14,15 @@ function App() {
   return (
     <>
       <ToastContainer />
-      <TopNav />
+      {/* <TopNav /> */}
       <Router>
         <Routes>
           <Route path='/' element={<Login/>} />
-          <Route path='patient' element={<ListPatient/>}>
-            <Route path="addpatient" element ={<AddPatient/>} />
-            <Route path ="editpatient/:id" element ={<EditPatient/>} />
+          <Route path='patient' element={<TopNav/>}>
+            <Route path="list" element={<ListPatient/>} />
+            <Route index element={<ListPatient/>} />
+            <Route path="add" element ={<AddPatient/>} />
+            <Route path ="edit/:id" element ={<EditPatient/>} />
           </Route>
           {/* <Route path='/patient' element={<ListPatient/>} />
           <Route path='/addpatient' element={<AddPatient/>} />

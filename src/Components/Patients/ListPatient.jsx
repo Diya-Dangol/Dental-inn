@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import {Link, useNavigate} from 'react-router-dom'; 
+import {useNavigate} from 'react-router-dom'; 
 import {toast} from'react-toastify';
 
 function ListPatient(){
@@ -54,13 +54,12 @@ function ListPatient(){
                 Patient list
             </Alert> */}
             <div className='text-start m-4'>
-                {/* <Link to="/patient/addpatient"> */}
+                {/* <Link to="/patient/add"> */}
                     <Button variant="secondary"
-                    onClick={()=>{navigate('/patient/addpatient', {replace:true})}}
+                    onClick={()=>{navigate('/patient/add', {replace:true})}}
                     >Add Patient</Button>
                 {/* </Link> */}
             </div>
-
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Delete</Modal.Title>
@@ -96,11 +95,12 @@ function ListPatient(){
                                 <td>{gender}</td>
                                 <td>{contact_no}</td>
                                 <td>
-                                    <Link to={`/EditPatient/${id}`} >
-                                        <Button className="m-1" variant="success">
+                                    {/* <Link to={`patient/edit/${id}`} > */}
+                                        <Button className="m-1" variant="success" onClick={()=>{navigate(`/patient/edit/${id}`)}}>
                                             Edit
                                         </Button>
-                                    </Link>
+                                    {/* </Link> */}
+
                                 <Button variant="danger" onClick={()=>{handleShow(); setDeleteid(id)}}>
                                     Delete</Button>
                                 </td>
@@ -109,9 +109,6 @@ function ListPatient(){
                     })}
                 </tbody>
             </Table>
-
-            {/* <Outlet /> */}
-         
         </>
     )
 }

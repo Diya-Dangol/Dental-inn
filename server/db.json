@@ -7,6 +7,22 @@
       "gender": "Other",
       "address": "dsfafa adfjaljfl",
       "contact_no": "41518415315"
+    },
+    {
+      "id": 3,
+      "name": "joamlkd lkdmflma ",
+      "age": "48",
+      "gender": "Other",
+      "address": "dfa djfajlfjlf",
+      "contact_no": "123456789"
+    },
+    {
+      "id": 4,
+      "name": "dfakl  jsfjla ",
+      "age": "82",
+      "gender": "Male",
+      "address": "dljf  adfjalkfj",
+      "contact_no": "789456123"
     }
   ]
 }
