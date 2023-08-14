@@ -29,7 +29,7 @@ function EditPatient() {
       progress: undefined,
       theme: "light",
       });
-
+    
     const handleChange=(e)=>{
         const name=e.target.name;
         const value=e.target.value;

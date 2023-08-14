@@ -24,5 +24,21 @@
       "address": "dljf  adfjalkfj",
       "contact_no": "789456123"
     }
+  ],
+  "checkup":[
+    {
+      "id":1, 
+      "pid": 2, 
+      "name": "Filling",
+      "treatment": "dafaf",
+      "price": 400
+    },
+    {
+      "id":2,
+      "pid": 3,
+      "name": "Scalling",
+      "treatment": "abcd",
+      "price": 700
+    }
   ]
 }

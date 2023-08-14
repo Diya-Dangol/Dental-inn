@@ -9,6 +9,7 @@ import AddPatient from "./Components/Patients/AddPatient";
 import EditPatient from "./Components/Patients/EditPatient";
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CheckupList from "./Components/Checkup/CheckupList";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
             <Route path="add" element ={<AddPatient/>} />
             <Route path ="edit/:id" element ={<EditPatient/>} />
           </Route>
+          <Route path='/checkup/:pid' element={<CheckupList />} />
+          
           {/* <Route path='/patient' element={<ListPatient/>} />
           <Route path='/addpatient' element={<AddPatient/>} />
           <Route path='/editpatient/:id' element={<EditPatient/>} /> */}

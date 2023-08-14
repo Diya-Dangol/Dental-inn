@@ -95,6 +95,9 @@ function ListPatient(){
                                 <td>{gender}</td>
                                 <td>{contact_no}</td>
                                 <td>
+                                        <Button className="m-1" variant="primary" onClick={()=>{navigate(`/checkup/${id}`)}}>
+                                            CheckUp
+                                        </Button>
                                     {/* <Link to={`patient/edit/${id}`} > */}
                                         <Button className="m-1" variant="success" onClick={()=>{navigate(`/patient/edit/${id}`)}}>
                                             Edit
