@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import {useNavigate} from 'react-router-dom'; 
-import {toast} from'react-toastify';
+import {toast} from 'react-toastify';
 
 function ListPatient(){
     const [patient, setPatient]=useState([]); 

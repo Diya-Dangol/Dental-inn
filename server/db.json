@@ -25,20 +25,32 @@
       "contact_no": "789456123"
     }
   ],
-  "checkup":[
+  "checkup": [
     {
-      "id":1, 
-      "pid": 2, 
-      "name": "Filling",
-      "treatment": "dafaf",
-      "price": 400
+      "id": 1
     },
     {
-      "id":2,
-      "pid": 3,
-      "name": "Scalling",
-      "treatment": "abcd",
-      "price": 700
+      "id": 4
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9,
+      "pid": "3",
+      "name": "dfadf edited",
+      "treatment": "dfadf new edited",
+      "price": "10000"
+    },
+    {
+      "id": 10,
+      "pid": "3",
+      "name": "fdsfkasdf",
+      "treatment": " sdfadfaf",
+      "price": "8500"
     }
   ]
 }

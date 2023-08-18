@@ -3,8 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-// import { useNavigate } from 'react-router-dom';
-// import {toast} from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import {toast} from 'react-toastify';
 
 function AddPatient() {
   const [patient, setPatient] = useState({
@@ -18,18 +18,18 @@ function AddPatient() {
 
   const [validated, setValidated] = useState(false);
 
-  // const navigate =useNavigate();
+  const navigate =useNavigate();
 
-  // const notify =()=> toast.success("New Patient Added", {
-  //   position: "top-center",
-  //   autoClose: 5000,
-  //   hideProgressBar: false,
-  //   closeOnClick: true,
-  //   pauseOnHover: true,
-  //   draggable: true,
-  //   progress: undefined,
-  //   theme: "light",
-  //   });
+  const notify =()=> toast.success("New Patient Added", {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
 
   const handleChange=(e)=>{
     const name=e.target.name;
@@ -45,18 +45,16 @@ function AddPatient() {
     }
     setValidated(true);
 
+    const requestOptions ={
+      method:"POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(patient)
+    };
 
-    
-    // const requestOptions ={
-    //   method:"POST",
-    //   headers: {"Content-Type": "application/json"},
-    //   body: JSON.stringify(patient)
-    // };
-
-    // fetch(`${import.meta.env.VITE_BASE_URL}/patients`, requestOptions)
-    // .then(res => res.json())
-    // .then(notify)
-    // .then(navigate('/patient'))
+    fetch(`${import.meta.env.VITE_BASE_URL}/patients`, requestOptions)
+    .then(res => res.json())
+    .then(notify)
+    .then(navigate('/patient'))
   };
 
   return (
