@@ -42,13 +42,10 @@ function CheckupList() {
     
     fetch(`${import.meta.env.VITE_BASE_URL}/checkup/${deleteid}`, requestOptions)
     .then(res=>res.json())
-    // debugger;
-    .then(console.log(deleteid))
     .then(handleClose) 
     .then(notify)
     .then(setDeleteid())
   }
-
   return (
     <>
       <h2>History of Patient no. {`${pid}`}</h2>
@@ -66,7 +63,7 @@ function CheckupList() {
       </Modal>
       <button onClick={()=>navigate(`/checkup/${pid}/add`, {replace: true})}>ADD</button>
       <div>
-        <Table>
+        <Table striped bordered hover responsive>
           <thead >
             <tr>
               <th>SN</th>
@@ -85,8 +82,8 @@ function CheckupList() {
                     <td>{treatment}</td>
                     <td>{price}</td>
                     <td>
-                      <button onClick={()=>navigate(`/checkup/${pid}/edit/${id}`)}>EDIT</button>
-                      <button onClick={()=>{handleShow(); setDeleteid(id)}}>DELETE</button>
+                      <Button variant="primary" onClick={()=>navigate(`/checkup/${pid}/edit/${id}`)}>EDIT</Button>
+                      <Button variant="danger" onClick={()=>{setDeleteid(id); handleShow();}}>DELETE</Button>
                     </td>
                   </tr>
                 )

@@ -27,30 +27,21 @@
   ],
   "checkup": [
     {
-      "id": 1
+      "id": 1,
+      "pid": "4",
+      "name": "jfdjfla",
+      "treatment": "dsfasf",
+      "price": "50000"
+    }
+  ],
+  "treatment":[
+    {
+      "id":1,
+      "name": "name"
     },
     {
-      "id": 4
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9,
-      "pid": "3",
-      "name": "dfadf edited",
-      "treatment": "dfadf new edited",
-      "price": "10000"
-    },
-    {
-      "id": 10,
-      "pid": "3",
-      "name": "fdsfkasdf",
-      "treatment": " sdfadfaf",
-      "price": "8500"
+      "id":2,
+      "name": "name 2"
     }
   ]
 }
