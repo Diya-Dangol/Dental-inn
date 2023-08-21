@@ -1,9 +1,7 @@
 import {useState} from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import { useNavigate } from 'react-router-dom'
+import {toast} from 'react-toastify'
 
 function AddTreatment() {
   const [treatment, setTreatment] = useState({
@@ -17,34 +15,46 @@ function AddTreatment() {
     setTreatment({...treatment, [name]:value})
   }
   const [validated, setValidated] = useState(false);
-  const navigate= useNavigate();
+
+  const notify =()=> toast.success("New treatment Added", {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
   
   const handleSubmit=(e)=>{
-    const form = e.currentTarget;
-    if (form.checkValidity() === false) {
+    if (treatment.name) {
       e.preventDefault();
       e.stopPropagation();
     }
     setValidated(true);
-    
+
     const requestOptions = {
       method:"POST",
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify(treatment)
     }
-
+    
     fetch(`${import.meta.env.VITE_BASE_URL}/treatment`, requestOptions)
     .then(res => res.json())
-    .then(navigate('/treatment'))
+    .then(setTreatment({
+      id:"",
+      name: ""
+    }))
+    .then(setValidated(false))
+    .then(notify)
   }
   
   return (
     <div>
-        Add Treatment form
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <Row className="mb-3">
-          <Form.Group as={Col} md="4">
-            <Form.Label>Name</Form.Label>
+        <div className="d-flex justify-content-center">
+      <Form noValidate validated={validated}>
+          <Form.Group>
             <Form.Control
               maxLength={25}
               type="text"
@@ -56,9 +66,10 @@ function AddTreatment() {
             />
              <Form.Control.Feedback type="invalid">Name is Required</Form.Control.Feedback>
           </Form.Group>
-        </Row>
-        <Button type="submit">Submit form</Button>
       </Form>
+          <Button className='ms-2' type="submit" onClick={handleSubmit}>Add</Button>
+        </div>
+
     </div>
   )
 }

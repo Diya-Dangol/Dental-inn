@@ -1,4 +1,7 @@
 import {useState, useEffect} from 'react';
+import AddTreatment from './AddTreatment';
+
+import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import {useNavigate} from 'react-router-dom'; 
 import Modal from 'react-bootstrap/Modal';
@@ -17,9 +20,9 @@ function TreatmentList() {
         fetch(`${import.meta.env.VITE_BASE_URL}/treatment`)
         .then(res => res.json())
         .then(data => setTreatment(data))
-    },[deleteid])
+    },[deleteid, treatment])
 
-    const notify =()=> toast.success("Patient Deleted Successfully", {
+    const notify =()=> toast.success("Treatment Deleted Successfully", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -46,9 +49,8 @@ function TreatmentList() {
     
   return (
     <div>
-        treatment
-        <button onClick={()=>{navigate('/treatment/add')}}>ADD Treatment</button>
-        {console.log(treatment)}
+        <h2 className='ms-0'>Treatment</h2>
+        <AddTreatment/>        
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>Delete</Modal.Title>
@@ -61,16 +63,29 @@ function TreatmentList() {
                 <Button variant="secondary" onClick={handleClose}>No</Button>
             </Modal.Footer>
         </Modal>
-        {treatment.map((item)=>{
-            const {id, name}=item;
-            return(
-                <div key={id}>
-                    {name}
-                    <button onClick={()=>{navigate(`/treatment/edit/${id}`)}}>Edit</button>
-                    <button onClick={()=>{setDeleteid(id); handleShow()}}> Delete</button>
-                </div>
-            )
-        })}
+        <Table striped bordered hover responsive>
+            <thead>
+                <tr>
+                    <th>SN</th>
+                    <th>Treatment Names</th>
+                </tr>
+            </thead>
+            <tbody>
+                {treatment.map((item, index)=>{
+                    const {id, name}=item;
+                    return(
+                        <tr key={id}>
+                            <td>{index+1}</td>
+                            <td>{name}</td>
+                            <td>
+                                <Button variant="primary" onClick={()=>{navigate(`/treatment/edit/${id}`)}}>Edit</Button>
+                                <Button variant="danger" onClick={()=>{setDeleteid(id); handleShow()}}> Delete</Button>
+                            </td>
+                        </tr>
+                    )
+                })}
+            </tbody>
+        </Table>
     </div>
   )
 }
