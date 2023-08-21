@@ -2,11 +2,7 @@
   "patients": [
     {
       "id": 1,
-      "name": "dsknfa ",
-      "age": "15",
-      "gender": "Other",
-      "address": "dsfafa adfjaljfl",
-      "contact_no": "41518415315"
+      "name": "name edited"
     },
     {
       "id": 3,
@@ -34,14 +30,14 @@
       "price": "50000"
     }
   ],
-  "treatment":[
+  "treatment": [
     {
-      "id":1,
-      "name": "name"
+      "id": 2,
+      "name": "name 2"
     },
     {
-      "id":2,
-      "name": "name 2"
+      "id": 3,
+      "name": "dfafsaf"
     }
   ]
 }

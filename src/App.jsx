@@ -14,6 +14,7 @@ import AddCheckup from "./Components/Checkup/AddCheckup";
 import EditCheckup from './Components/Checkup/EditCheckup';
 import TreatmentList from "./Components/Treatment/TreatmentList";
 import AddTreatment from "./Components/Treatment/AddTreatment";
+import EditTreatment from "./Components/Treatment/EditTreatment";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
 
           <Route path="treatment" element ={<TreatmentList />}/>
           <Route path="treatment/add" element={<AddTreatment />} />
+          <Route path="treatment/edit/:id" element={<EditTreatment />} />
           {/* </Route> */}
         </Routes>
       </Router>
