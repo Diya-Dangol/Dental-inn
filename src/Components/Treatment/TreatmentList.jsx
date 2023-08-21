@@ -17,7 +17,7 @@ function TreatmentList() {
         fetch(`${import.meta.env.VITE_BASE_URL}/treatment`)
         .then(res => res.json())
         .then(data => setTreatment(data))
-    },[])
+    },[deleteid])
 
     const notify =()=> toast.success("Patient Deleted Successfully", {
         position: "top-center",
@@ -37,7 +37,6 @@ function TreatmentList() {
         };
 
         fetch(`${import.meta.env.VITE_BASE_URL}/treatment/${deleteid}`, requestOptions)
-        .then(res=> res.json)
         .then(console.log(deleteid))
         .then(handleClose) 
         .then(notify)
@@ -48,6 +47,7 @@ function TreatmentList() {
   return (
     <div>
         treatment
+        <button onClick={()=>{navigate('/treatment/add')}}>ADD Treatment</button>
         {console.log(treatment)}
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
