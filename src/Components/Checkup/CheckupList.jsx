@@ -74,12 +74,12 @@ function CheckupList() {
           </thead>
           <tbody>
               {checkup.map((val, index)=>{
-                const {id, name, treatment,price}=val;
+                const {id, name, selectedOption ,price}=val;
                 return(
                   <tr key={id} > 
                     <td>{index+1}</td>
                     <td>{name}</td>
-                    <td>{treatment}</td>
+                    <td>{selectedOption? selectedOption.map((item)=>item.value).toString() : null}</td>
                     <td>{price}</td>
                     <td>
                       <Button variant="primary" onClick={()=>navigate(`/checkup/${pid}/edit/${id}`)}>EDIT</Button>

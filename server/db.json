@@ -1,10 +1,6 @@
 {
   "patients": [
     {
-      "id": 1,
-      "name": "name edited"
-    },
-    {
       "id": 3,
       "name": "joamlkd lkdmflma ",
       "age": "48",
@@ -28,56 +24,51 @@
       "name": "jfdjfla",
       "treatment": "dsfasf",
       "price": "50000"
+    },
+    {
+      "id": 2,
+      "pid": "3",
+      "name": "Check up 1",
+      "treatment": "Treatment 2",
+      "price": "8000"
+    },
+    {
+      "id": 3,
+      "pid": "3",
+      "name": "Check up 2",
+      "treatment": "Treatment 3",
+      "price": "8000"
+    },
+    {
+      "id": 4,
+      "pid": "3",
+      "name": "Checkup 1",
+      "treatment": "Treatment 1",
+      "price": "90000",
+      "selectedOption": [
+        {
+          "value": "treatment 2",
+          "label": "treatment 2"
+        },
+        {
+          "value": "treatment 3",
+          "label": "treatment 3"
+        }
+      ]
     }
   ],
   "treatment": [
     {
       "id": 1,
-      "name": "daf dfjasjdfjasf edited"
+      "name": "Treatment 1 edited"
     },
     {
       "id": 2,
-      "name": "dsfa afdljdlfjlaf"
+      "name": "treatment 2"
     },
     {
-      "id": 4,
-      "name": "sdkjsnkandna"
-    },
-    {
-      "id": 5,
-      "name": "fdfadfa"
-    },
-    {
-      "id": 6,
-      "name": "djafdfja dsjfljal"
-    },
-    {
-      "id": 8,
-      "name": "dsjfaf jadfja"
-    },
-    {
-      "id": 9,
-      "name": "fadsfa"
-    },
-    {
-      "id": 10,
-      "name": "new treatment 2"
-    },
-    {
-      "id": 11,
-      "name": ""
-    },
-    {
-      "id": 12,
-      "name": ""
-    },
-    {
-      "id": 13,
-      "name": ""
-    },
-    {
-      "id": 14,
-      "name": ""
+      "id": 3,
+      "name": "treatment 3"
     }
   ]
 }
