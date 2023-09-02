@@ -30,14 +30,26 @@
       "pid": "3",
       "name": "Check up 1",
       "treatment": "Treatment 2",
-      "price": "8000"
+      "price": "8000",
+      "selectedOption": [
+        {
+          "value": "Treatment 1 edited",
+          "label": "Treatment 1 edited"
+        }
+      ]
     },
     {
       "id": 3,
       "pid": "3",
       "name": "Check up 2",
       "treatment": "Treatment 3",
-      "price": "8000"
+      "price": "8000",
+      "selectedOption": [
+        {
+          "value": "treatment 2",
+          "label": "treatment 2"
+        }
+      ]
     },
     {
       "id": 4,
@@ -53,6 +65,27 @@
         {
           "value": "treatment 3",
           "label": "treatment 3"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "pid": "3",
+      "name": "Checkup4 edited",
+      "treatment": "",
+      "price": "10500",
+      "selectedOption": [
+        {
+          "value": "treatment 2",
+          "label": "treatment 2"
+        },
+        {
+          "value": "treatment 3",
+          "label": "treatment 3"
+        },
+        {
+          "value": "Treatment 1 edited",
+          "label": "Treatment 1 edited"
         }
       ]
     }

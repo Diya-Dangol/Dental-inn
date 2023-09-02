@@ -4,7 +4,9 @@ import { Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import {toast} from 'react-toastify';
-import Select from 'react-select'
+import Select from 'react-select';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function AddCheckup() {
   const [treatmentlist, setTreatmentlist] = useState([]);
@@ -42,7 +44,6 @@ function AddCheckup() {
     e.preventDefault();
 
     const newCheckup= {...checkup, selectedOption}
-    // console.log(newCheckup)
     const requestOptions={
       method: "POST",
       headers: {"Content-type":"application/json"},
@@ -70,10 +71,20 @@ function AddCheckup() {
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-        <Form.Control type="text" name="name" value={checkup.name} placeholder='Name' onChange={handleChange} />
-        <Form.Control type="text" name="treatment" value={checkup.treatment} placeholder='Treatment' onChange={handleChange} />
-        <Form.Control type="number" name="price" value={checkup.price} placeholder='Price' onChange={handleChange} />
-        <Select isMulti={true} onChange={setSelectedOption} options={options}/>
+        <Row className="mb-3">
+        <Form.Group as={Col} md='6'>
+          <Form.Label>Checkup Name</Form.Label>
+          <Form.Control type="text" name="name" value={checkup.name} placeholder='Name' onChange={handleChange} />
+        </Form.Group>
+        <Form.Group as={Col} md='6'>
+          <Form.Label>Treatment</Form.Label>
+          <Select isMulti={true} onChange={setSelectedOption} options={options}/>
+        </Form.Group>
+        <Form.Group as={Col} md='6'>
+          <Form.Label>Price</Form.Label>
+          <Form.Control type="number" name="price" value={checkup.price} placeholder='Price' onChange={handleChange} />
+        </Form.Group>
+        </Row>
         <Button type="submit">Submit</Button>
       </Form>
     </div>
