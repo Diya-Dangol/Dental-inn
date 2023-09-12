@@ -61,7 +61,9 @@ function CheckupList() {
             <Button variant="secondary" onClick={handleClose}>No</Button>
         </Modal.Footer>
       </Modal>
-      <button onClick={()=>navigate(`/checkup/${pid}/add`, {replace: true})}>ADD</button>
+      <div className='text-start m-4'>
+        <Button className="ms-2" variant="primary" onClick={()=>navigate(`/checkup/${pid}/add`, {replace: true})}>ADD</Button>
+      </div>
       <div>
         <Table striped bordered hover responsive>
           <thead >

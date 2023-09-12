@@ -44,7 +44,7 @@ function AddPatient() {
       e.stopPropagation();
     }
     setValidated(true);
-
+    
     const requestOptions ={
       method:"POST",
       headers: {"Content-Type": "application/json"},
@@ -71,6 +71,7 @@ function AddPatient() {
               value={patient.name}
               onChange={handleChange}
               required
+              // error msg chai dekhayena aru sab vayo required vaner aaunu parne khali vayo vane
             />
              <Form.Control.Feedback type="invalid">Name is Required</Form.Control.Feedback>
           </Form.Group>
