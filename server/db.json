@@ -110,31 +110,10 @@
   "users": [
     {
       "email": "diya.dangol15@gmail.com",
-      "password": "$2a$10$NrWzAxYdGToUqc9bFTCuDO8E9KUm8zU0Oq5c41GVxONSc4vbjy3oG",
+      "password": "$2a$10$Qpd1/Vm8KcL2.zpz8FRere.f3yUEi4Biqh8TU9vuuAfuLJvjXh9Za",
       "id": 1,
-      "username": "sdadaaaaadadsdsdss",
-      "confirmPassword": "123123"
-    },
-    {
-      "email": "diya@gmail.com",
-      "password": "$2a$10$Dxu4BV5VUR.ebllQpiB.i.phvrNT0siK/dGzmZ5iafcdZRSU64y8O",
-      "id": 2,
       "username": "diya",
-      "confirmPassword": "123456"
-    },
-    {
-      "email": "diya100@gmail.com",
-      "password": "$2a$10$v1Rz8nk9eH3qNtY3RF3nxOfVF/Rik3YlXDYoat4PrivrnkhYJHYmG",
-      "id": 3,
-      "username": "Diyadangol",
-      "confirmPassword": "123456"
-    },
-    {
-      "email": "dip@gmail.com",
-      "password": "$2a$10$Nzzd13u2BONbaW9miZxw5OHPYDU9gsOAzLONvdvL/nVNeWEOGaV2C",
-      "id": 4,
-      "username": "dipini",
-      "confirmPassword": "admin123"
+      "confirmPassword": "123123"
     }
   ]
 }
