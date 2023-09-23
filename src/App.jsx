@@ -16,6 +16,9 @@ import TreatmentList from "./Components/Treatment/TreatmentList";
 import AddTreatment from "./Components/Treatment/AddTreatment";
 import EditTreatment from "./Components/Treatment/EditTreatment";
 import Register from './Components/Admin/Register';
+import Sidebar from "./Components/Sidebar/Sidebar";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import './assets/css/main.css';
 
 function App() {
@@ -23,28 +26,35 @@ function App() {
     <>
       <ToastContainer />
       <TopNav />
-      <Router className="bg-img">
-        <Routes>
-          <Route path='/login' element={<Login/>} />
-          <Route path='/register' element={<Register/>} />
-          <Route path='/' element={<ListPatient/>} />
-          <Route path='patient'> 
-          {/* element={<TopNav/>} yo narakhe pani hunxa? Route ma? */}
-            <Route path="list" element={<ListPatient/>} />
-            <Route index element={<ListPatient/>} />
-            <Route path="add" element ={<AddPatient/>} />
-            <Route path ="edit/:id" element ={<EditPatient/>} />
-          </Route>
-          <Route path='/checkup/:pid' element={<CheckupList />} />
-          <Route path='/checkup/:pid/add' element={<AddCheckup />} />
-          <Route path='/checkup/:pid/edit/:id' element={<EditCheckup />} />
+      <Row>
+        <Col xs md lg={2}>
+          <Sidebar/>
+        </Col>
+        <Col xs md lg={10}>
+          <Router className="bg-img">
+            <Routes>
+              <Route path='/login' element={<Login/>} />
+              <Route path='/register' element={<Register/>} />
+              <Route path='/' element={<ListPatient/>} />
+              <Route path='patient'> 
+              {/* element={<TopNav/>} yo narakhe pani hunxa? Route ma? */}
+                <Route path="list" element={<ListPatient/>} />
+                <Route index element={<ListPatient/>} />
+                <Route path="add" element ={<AddPatient/>} />
+                <Route path ="edit/:id" element ={<EditPatient/>} />
+              </Route>
+              <Route path='/checkup/:pid' element={<CheckupList />} />
+              <Route path='/checkup/:pid/add' element={<AddCheckup />} />
+              <Route path='/checkup/:pid/edit/:id' element={<EditCheckup />} />
 
-          <Route path="treatment" element ={<TreatmentList />}/>
-          <Route path="treatment/add" element={<AddTreatment />} />
-          <Route path="treatment/edit/:id" element={<EditTreatment />} />
-          {/* </Route> */}
-        </Routes>
-      </Router>
+              <Route path="treatment" element ={<TreatmentList />}/>
+              <Route path="treatment/add" element={<AddTreatment />} />
+              <Route path="treatment/edit/:id" element={<EditTreatment />} />
+              {/* </Route> */}
+            </Routes>
+          </Router>
+        </Col>
+      </Row>
     </>
   )
 }
