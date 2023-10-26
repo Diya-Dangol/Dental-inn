@@ -20,6 +20,8 @@ import Sidebar from "./Components/Sidebar/Sidebar";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './assets/css/main.css';
+import AddAppointment from "./Components/Appointment/AddAppointment";
+import AppointmentList from "./Components/Appointment/AppointmentList";
 
 function App() {
   return (
@@ -51,6 +53,10 @@ function App() {
               <Route path="treatment/add" element={<AddTreatment />} />
               <Route path="treatment/edit/:id" element={<EditTreatment />} />
               {/* </Route> */}
+              <Route path="appointment">
+                <Route index element={<AppointmentList/>} />
+                <Route path="add" element={<AddAppointment/>} />
+              </Route>
             </Routes>
           </Router>
         </Col>

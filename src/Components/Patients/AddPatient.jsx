@@ -96,7 +96,6 @@ function AddPatient() {
                   {/* <Form.Check.Feedback type="invalid">Gender is Required</Form.Check.Feedback> */}
                 </div>
               )
-              //  kina yesto slow vaako?
             })}
           </Form.Group>
         </Row>

@@ -17,10 +17,6 @@ function TopNav() {
         </Container>
       </Navbar>
       <Outlet /> 
-      {/* yesma feri outlet xa ni ta | kei farak pardaina hai?
-      outlet vaneko chai parent component ma rakhne raixa ani testo children lai route garna lai
-      aba k garne?
-       */}
        <br />
     </>
   );

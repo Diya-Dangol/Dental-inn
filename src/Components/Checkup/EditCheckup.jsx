@@ -12,7 +12,6 @@ function EditCheckup() {
   const {pid,id}= useParams();
   
   const [treatmentlist, setTreatmentlist] = useState([]);
-  const [selectedOptions, setSelectedOptions] = useState([]);
 
   const [checkup,setCheckup]= useState({
     id:"",
@@ -63,7 +62,7 @@ function EditCheckup() {
     .then(notify)
     .then(navigate(`/checkup/${pid}`))
   }
-  console.log(selectedOptions);
+  // console.log(selectedOptions);
 
 
   useEffect(()=>{
@@ -87,7 +86,6 @@ function EditCheckup() {
             <Form.Label>Checkup Name</Form.Label>
             <Form.Control type="text" name="name" value={checkup.name} placeholder='Name' onChange={handleChange} />
           </Form.Group>
-          {/* vayo ab k garne? */}
           <Form.Group as={Col} md='6'>
             <Form.Label>Treatment</Form.Label>
             <Select isMulti={true} value={checkup.selectedOption} onChange={val=>setCheckup({...checkup, selectedOption:val})} options={options}/>

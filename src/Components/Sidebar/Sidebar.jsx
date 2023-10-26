@@ -5,6 +5,7 @@ function Sidebar() {
     <aside className="sidebar d-flex flex-column">
         <Button className="mb-3" href="/treatment">Treatment</Button>
         <Button href="/patient">Patient</Button>
+        <Button href="/appointment">Appointment</Button>
     </aside>
   )
 }

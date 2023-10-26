@@ -20,7 +20,7 @@ function TreatmentList() {
         fetch(`${import.meta.env.VITE_BASE_URL}/treatment`)
         .then(res => res.json())
         .then(data => setTreatment(data))
-    },[deleteid, treatment])
+    },[deleteid])
 
     const notify =()=> toast.success("Treatment Deleted Successfully", {
         position: "top-center",
